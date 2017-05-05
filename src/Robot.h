@@ -3,6 +3,12 @@
 
 #include <IterativeRobot.h>
 #include <SmartDashboard/SendableChooser.h>
+#include <Commands/Command.h>
+
+#include <memory>
+
+#include "Subsystems/DriveTrain.h"
+#include "OI.h"
 
 class Robot: public frc::IterativeRobot {
 public:
@@ -14,6 +20,9 @@ public:
 	void TeleopInit() override;
 	void TeleopPeriodic() override;
 	void TestPeriodic() override;
+
+	static std::shared_ptr<DriveTrain> drivetrain;
+	static std::shared_ptr<OI> operatorInput;
 private:
 	frc::SendableChooser<frc::Command*> chooser;
 };

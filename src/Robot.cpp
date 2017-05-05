@@ -1,7 +1,13 @@
 #include "Robot.h"
+#include <Commands/Scheduler.h>
+#include <LiveWindow/LiveWindow.h>
+
+std::shared_ptr<DriveTrain> Robot::drivetrain;
+std::shared_ptr<OI> Robot::operatorInput;
 
 void Robot::RobotInit(){
-
+	Robot::drivetrain.reset(new DriveTrain);
+	Robot::operatorInput.reset(new OI);
 }
 
 void Robot::DisabledInit(){
