@@ -9,6 +9,8 @@ namespace frc
 	class JoystickButton;
 }
 
+class BothTriggers;
+
 class OI {
 public:
 	OI();
@@ -20,6 +22,7 @@ private:
 	std::unique_ptr<frc::Joystick> driver;
 	std::unique_ptr<frc::JoystickButton> driverRB;
 	std::unique_ptr<frc::JoystickButton> driverLB;
+	std::unique_ptr<BothTriggers> trigClimber;
 };
 
 #endif  // OI_H

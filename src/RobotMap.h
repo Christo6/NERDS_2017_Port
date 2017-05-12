@@ -10,6 +10,9 @@ constexpr int PNEU_DOOR = 0;
 constexpr int PNEU_LIFT_FORWARD = 1;
 constexpr int PNEU_LIFT_BACKWARD = 2;
 
+//PWM
+constexpr int PWM_CLIMBER = 3;
+
 //Joysticks
 constexpr int JOY_DRIVER = 0;
 
@@ -22,6 +25,8 @@ constexpr int LEFT_X = 0;
 constexpr int LEFT_Y = 1;
 constexpr int RIGHT_X = 4;
 constexpr int RIGHT_Y = 5;
+constexpr int RIGHT_TRIGGER = 3;
+constexpr int LEFT_TRIGGER = 2;
 
 //Deadzone
 constexpr double DEADZONE = 0.05;

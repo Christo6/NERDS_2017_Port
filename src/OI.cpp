@@ -8,13 +8,17 @@
 #include "Commands/ToggleDoor.h"
 #include "Commands/ToggleLift.h"
 
+#include <Commands/ActivateClimber.h>
+#include <Triggers/BothTriggers.h>
 OI::OI() :
 	driver(std::make_unique<Joystick>(JOY_DRIVER)),
 	driverRB(std::make_unique<JoystickButton>(driver.get(), DRIVER_RB)),
-	driverLB(std::make_unique<JoystickButton>(driver.get(), DRIVER_LB))
+	driverLB(std::make_unique<JoystickButton>(driver.get(), DRIVER_LB)),
+	trigClimber(std::make_unique<BothTriggers>())
 {
 	driverRB->WhenPressed(new ToggleDoor);
 	driverLB->WhenPressed(new ToggleLift);
+	trigClimber->WhileActive(new ActivateClimber);
 }
 
 OI::~OI() = default;

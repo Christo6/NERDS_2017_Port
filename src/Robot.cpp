@@ -5,6 +5,7 @@
 std::shared_ptr<DriveTrain> Robot::drivetrain;
 std::shared_ptr<OI> Robot::operatorInput;
 std::shared_ptr<Pneumatics> Robot::pneumatics;
+std::shared_ptr<Climber> Robot::climber;
 
 void Robot::RobotInit(){
 	Robot::drivetrain.reset(new DriveTrain);
