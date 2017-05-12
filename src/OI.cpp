@@ -4,10 +4,13 @@
 #include <Joystick.h>
 #include <cmath>
 
+#include <Commands/ActivateClimber.h>
+#include <Triggers/BothTriggers.h>
 OI::OI() :
-	driver(std::make_unique<Joystick>(JOY_DRIVER))
+	driver(std::make_unique<Joystick>(JOY_DRIVER)),
+	trigClimber(std::make_unique<BothTriggers>())
 {
-
+	trigClimber->WhileActive(new ActivateClimber);
 }
 
 OI::~OI() = default;
