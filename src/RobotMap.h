@@ -5,11 +5,20 @@
 constexpr int LEFT_DRIVE = 0;
 constexpr int RIGHT_DRIVE = 1;
 
+//pneumatics
+constexpr int PNEU_DOOR = 0;
+constexpr int PNEU_LIFT_FORWARD = 1;
+constexpr int PNEU_LIFT_BACKWARD = 2;
+
 //PWM
 constexpr int PWM_CLIMBER = 3;
 
 //Joysticks
 constexpr int JOY_DRIVER = 0;
+
+//buttons
+constexpr int DRIVER_RB = 6;
+constexpr int DRIVER_LB = 5;
 
 //Axis Values
 constexpr int LEFT_X = 0;

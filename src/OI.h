@@ -6,6 +6,7 @@
 namespace frc
 {
 	class Joystick;
+	class JoystickButton;
 }
 
 class BothTriggers;
@@ -19,6 +20,8 @@ public:
 	double applyDeadzone(double);
 private:
 	std::unique_ptr<frc::Joystick> driver;
+	std::unique_ptr<frc::JoystickButton> driverRB;
+	std::unique_ptr<frc::JoystickButton> driverLB;
 	std::unique_ptr<BothTriggers> trigClimber;
 };
 

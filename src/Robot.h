@@ -1,12 +1,6 @@
 #ifndef ROBOT_H
 #define ROBOT_H
 
-
-/* TODO
-Fix command to turn off on trigger
-Add command to OI
-*/
-
 #include <IterativeRobot.h>
 #include <SmartDashboard/SendableChooser.h>
 #include <Commands/Command.h>
@@ -14,6 +8,7 @@ Add command to OI
 #include <memory>
 
 #include "Subsystems/DriveTrain.h"
+#include "Subsystems/Pneumatics.h"
 #include "Subsystems/Climber.h"
 #include "OI.h"
 
@@ -30,6 +25,7 @@ public:
 
 	static std::shared_ptr<DriveTrain> drivetrain;
 	static std::shared_ptr<OI> operatorInput;
+	static std::shared_ptr<Pneumatics> pneumatics;
 	static std::shared_ptr<Climber> climber;
 private:
 	frc::SendableChooser<frc::Command*> chooser;
