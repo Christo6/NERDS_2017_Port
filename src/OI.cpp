@@ -3,11 +3,18 @@
 
 #include <Joystick.h>
 #include <cmath>
+#include <Buttons/JoystickButton.h>
+
+#include "Commands/ToggleDoor.h"
+#include "Commands/ToggleLift.h"
 
 OI::OI() :
-	driver(std::make_unique<Joystick>(JOY_DRIVER))
+	driver(std::make_unique<Joystick>(JOY_DRIVER)),
+	driverRB(std::make_unique<JoystickButton>(driver.get(), DRIVER_RB)),
+	driverLB(std::make_unique<JoystickButton>(driver.get(), DRIVER_LB))
 {
-
+	driverRB->WhenPressed(new ToggleDoor);
+	driverLB->WhenPressed(new ToggleLift);
 }
 
 OI::~OI() = default;

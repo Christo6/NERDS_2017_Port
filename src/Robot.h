@@ -1,6 +1,11 @@
 #ifndef ROBOT_H
 #define ROBOT_H
 
+/* TODO
+ * Create Toggle Lift Command
+ * Add commands to OI
+ */
+
 #include <IterativeRobot.h>
 #include <SmartDashboard/SendableChooser.h>
 #include <Commands/Command.h>
@@ -8,6 +13,7 @@
 #include <memory>
 
 #include "Subsystems/DriveTrain.h"
+#include "Subsystems/Pneumatics.h"
 #include "OI.h"
 
 class Robot: public frc::IterativeRobot {
@@ -23,6 +29,7 @@ public:
 
 	static std::shared_ptr<DriveTrain> drivetrain;
 	static std::shared_ptr<OI> operatorInput;
+	static std::shared_ptr<Pneumatics> pneumatics;
 private:
 	frc::SendableChooser<frc::Command*> chooser;
 };

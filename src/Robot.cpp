@@ -4,10 +4,12 @@
 
 std::shared_ptr<DriveTrain> Robot::drivetrain;
 std::shared_ptr<OI> Robot::operatorInput;
+std::shared_ptr<Pneumatics> Robot::pneumatics;
 
 void Robot::RobotInit(){
 	Robot::drivetrain.reset(new DriveTrain);
 	Robot::operatorInput.reset(new OI);
+	Robot::pneumatics.reset(new Pneumatics);
 }
 
 void Robot::DisabledInit(){
